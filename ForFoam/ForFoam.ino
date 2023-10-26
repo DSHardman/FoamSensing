@@ -13,8 +13,8 @@
 #define NUM_MEAS           NUM_ELECTRODES*NUM_ELECTRODES
 
 #define AD5930_CLK_FREQ    50000000
-#define TEST_FREQ          10000
-#define NUM_PERIODS        10        // Number of signal periods to measure
+#define TEST_FREQ          50000
+#define NUM_PERIODS        1       // Number of signal periods to measure
 #define ADC_AVG            1       // Number of ADC samples to average for each analog reading
 
 // AD5270 commands

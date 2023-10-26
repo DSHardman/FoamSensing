@@ -68,7 +68,7 @@ void setup()
 
     calibrate_samples();
 
-    AD5270_Set(CHIP_SEL_MEAS, 300); // MANUALLY SET GAINS
+    AD5270_Set(CHIP_SEL_MEAS, 50); // MANUALLY SET GAINS
     AD5270_Set(CHIP_SEL_DRIVE, 900);
 
     // calibrate_signal(AD, AD);
@@ -84,8 +84,8 @@ void setup()
 void loop()
 {
     uint16_t i;
-    int NEW_NUM = 144;
-    // int NEW_NUM = 96;
+    // int NEW_NUM = 144;
+    int NEW_NUM = 96;
 
     // Declare results variables, based on type of measurement being performed
     // ACROSS
@@ -94,8 +94,8 @@ void loop()
     double signal_phase[NEW_NUM];  // Store signal phase data
 
 if (millis() - frame_delay > 350) {
-    read_foam_across(signal_rms, signal_mag, signal_phase, NUM_ELECTRODES);
-    // read_foam_within(signal_rms, signal_mag, signal_phase, NUM_ELECTRODES);
+    // read_foam_across(signal_rms, signal_mag, signal_phase, NUM_ELECTRODES);
+    read_foam_within(signal_rms, signal_mag, signal_phase, NUM_ELECTRODES);
     for(i = 0; i < NEW_NUM; i++)
     {
       // if (signal_rms[i] != 0)
